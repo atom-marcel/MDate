@@ -1,0 +1,77 @@
+\hypertarget{_m_date_8h_source}{}\doxysection{MDate.\+h}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#ifndef MDATE\_H}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#define MDATE\_H}}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 \textcolor{preprocessor}{\#include <iostream>}}
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{32 \textcolor{preprocessor}{\#include <functional>}}
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 }
+\DoxyCodeLine{39 \textcolor{keyword}{class }\mbox{\hyperlink{class_date}{Date}}}
+\DoxyCodeLine{40 \{}
+\DoxyCodeLine{41 \textcolor{keyword}{private}:}
+\DoxyCodeLine{42     \textcolor{keyword}{const} \textcolor{keywordtype}{int} TIMESTAMP\_FROM = 1970;}
+\DoxyCodeLine{43     }
+\DoxyCodeLine{44     uint64\_t ms = 0;}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     \textcolor{keywordtype}{bool} leapyear;}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48     \textcolor{keywordtype}{int} year;}
+\DoxyCodeLine{49     \textcolor{keywordtype}{int} month;}
+\DoxyCodeLine{50     \textcolor{keywordtype}{int} day;}
+\DoxyCodeLine{51     \textcolor{keywordtype}{int} day\_month;}
+\DoxyCodeLine{52     \textcolor{keywordtype}{int} hour;}
+\DoxyCodeLine{53     \textcolor{keywordtype}{int} minute;}
+\DoxyCodeLine{54     \textcolor{keywordtype}{int} second;}
+\DoxyCodeLine{55     \textcolor{keywordtype}{int} weekday;}
+\DoxyCodeLine{56     \textcolor{keywordtype}{int} week\_of\_year;}
+\DoxyCodeLine{57 }
+\DoxyCodeLine{66     \textcolor{keywordtype}{int} Evaluate\_weekday(\textcolor{keywordtype}{int} d, \textcolor{keywordtype}{int} m, \textcolor{keywordtype}{int} y);}
+\DoxyCodeLine{67     \textcolor{keywordtype}{int} Evaluate\_week\_of\_year();}
+\DoxyCodeLine{68     \textcolor{keywordtype}{int} Find\_first\_weekday();}
+\DoxyCodeLine{69     \textcolor{keywordtype}{void} Evaluate\_Units();}
+\DoxyCodeLine{70     \textcolor{keywordtype}{void} Time\_Deviation(\textcolor{keywordtype}{int} input, \textcolor{keywordtype}{int} min\_value, \textcolor{keywordtype}{int} max\_value, \textcolor{keywordtype}{int}\& time\_attr, \textcolor{keywordtype}{int}\& next\_time\_attr, \textcolor{keywordtype}{void}(*fptr)(\textcolor{keywordtype}{void}*, \textcolor{keywordtype}{int}), \textcolor{keywordtype}{void}* context);}
+\DoxyCodeLine{71     \textcolor{keywordtype}{void} Evaluate\_DayInYear();}
+\DoxyCodeLine{72     \textcolor{keywordtype}{void} EvaluateStaticDate();}
+\DoxyCodeLine{73     \textcolor{keywordtype}{void} Evaluate\_Milliseconds();}
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{keyword}{public}:}
+\DoxyCodeLine{76     std::vector<int> \mbox{\hyperlink{class_date_a266637f7e03e55f794a31a07ff86de21}{month\_days}}\{ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 \}; }
+\DoxyCodeLine{77     std::vector<std::string> \mbox{\hyperlink{class_date_aade0624eadf841bb1f3c760a8f7c48a9}{de\_weekday\_string}}\{ \textcolor{stringliteral}{"{}Sonntag"{}}, \textcolor{stringliteral}{"{}Montag"{}}, \textcolor{stringliteral}{"{}Dienstag"{}}, \textcolor{stringliteral}{"{}Mittwoch"{}}, \textcolor{stringliteral}{"{}Donnerstag"{}}, \textcolor{stringliteral}{"{}Freitag"{}}, \textcolor{stringliteral}{"{}Samstag"{}} \}; }
+\DoxyCodeLine{82     \mbox{\hyperlink{class_date_a4e59ed4ba66eec61c27460c5d09fa1bd}{Date}}();}
+\DoxyCodeLine{92     \mbox{\hyperlink{class_date_a4e59ed4ba66eec61c27460c5d09fa1bd}{Date}}(\textcolor{keywordtype}{int} y, \textcolor{keywordtype}{int} m, \textcolor{keywordtype}{int} d, \textcolor{keywordtype}{int} h, \textcolor{keywordtype}{int} min, \textcolor{keywordtype}{int} s);}
+\DoxyCodeLine{97     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_date_afddec711bb1d5c58ec196333ee0b6573}{German\_GMT}}();}
+\DoxyCodeLine{101     std::string \mbox{\hyperlink{class_date_a18eed123b37825198e5e871e98e87752}{Ms\_Str}}();}
+\DoxyCodeLine{105     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_date_ab76fdc99611f8d3881bbd565d03d38d0}{Print\_Date}}();}
+\DoxyCodeLine{109     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_date_a5501b58aa3f2aad0870bc012d0a53db7}{Month\_Day\_Increment}}();}
+\DoxyCodeLine{113     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_date_a3d0bb1ac5eeb08304d5ff437637c1091}{Month\_Day\_Decrement}}();}
+\DoxyCodeLine{114 }
+\DoxyCodeLine{115     \textcolor{comment}{// Getter Section}}
+\DoxyCodeLine{125 \textcolor{comment}{}    std::string \mbox{\hyperlink{class_date_a4ef388aaa8a5e804e0384f8be78de9a5}{Get\_Date}}();}
+\DoxyCodeLine{126     \textcolor{keywordtype}{int} Get\_Year();}
+\DoxyCodeLine{142     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_date_abcd1eec66a633d50d366a93120987137}{Get\_Month}}();}
+\DoxyCodeLine{143     \textcolor{keywordtype}{int} Get\_MonthDay();}
+\DoxyCodeLine{144     \textcolor{keywordtype}{int} Get\_Hour();}
+\DoxyCodeLine{145     \textcolor{keywordtype}{int} Get\_Minute();}
+\DoxyCodeLine{146     \textcolor{keywordtype}{int} Get\_Second();}
+\DoxyCodeLine{157     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_date_ae04dcbb5fa50897ec8ac8adee27b8794}{Get\_Weekday}}();}
+\DoxyCodeLine{158     \textcolor{keywordtype}{int} Get\_Week\_of\_year();}
+\DoxyCodeLine{159     uint64\_t Get\_Milliseconds();}
+\DoxyCodeLine{160 }
+\DoxyCodeLine{161     \textcolor{comment}{// Setter Section}}
+\DoxyCodeLine{168 \textcolor{comment}{}    \textcolor{keywordtype}{void} \mbox{\hyperlink{class_date_af69f3feea14a52f2431a0e2d3bf22e2a}{Set\_Year}}(\textcolor{keywordtype}{int} in\_year);}
+\DoxyCodeLine{175     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_date_afc4d3cdae6c51857fe6856665fecb0f1}{Set\_Month}}(\textcolor{keywordtype}{int} in\_month);}
+\DoxyCodeLine{176     \textcolor{keywordtype}{void} Set\_MonthDay(\textcolor{keywordtype}{int} in\_day\_month);}
+\DoxyCodeLine{177     \textcolor{keywordtype}{void} Set\_Hour(\textcolor{keywordtype}{int} in\_hour);}
+\DoxyCodeLine{178     \textcolor{keywordtype}{void} Set\_Minute(\textcolor{keywordtype}{int} in\_minute);}
+\DoxyCodeLine{179     \textcolor{keywordtype}{void} Set\_Second(\textcolor{keywordtype}{int} in\_second);}
+\DoxyCodeLine{180     \textcolor{keywordtype}{void} Set\_Milliseconds(uint64\_t milliseconds);}
+\DoxyCodeLine{181 }
+\DoxyCodeLine{182 \};}
+\DoxyCodeLine{183 }
+\DoxyCodeLine{184 \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
